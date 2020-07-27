@@ -1,0 +1,10 @@
+.env
+node_modules/
+data/
+LICENSE
+README.md
+.gitignore
+.git/
+test.env
+.travis.yml
+docker/
