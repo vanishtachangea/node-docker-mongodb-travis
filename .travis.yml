@@ -1,28 +1,13 @@
-services: 
-  - docker
-  - mongodb
-
-env:
-  - MONGO_INITDB_ROOT_USERNAME=example
-  - MONGO_INITDB_ROOT_PASSWORD=example
-  - MONGO_INITDB_DATABASE=api
-  - MONGO_DATA_DIR=/data/db
-  - MONGO_TEST_DATA_DIR=/data/test_db
-  - MONGO_LOG_FILE=/mongodb/mongodb.log
-  - PORT=80
+services: docker
 
 before_install:
   - docker -v
+  - cp .env .env
   - sudo /etc/init.d/postgresql stop
   - sudo service mysql stop
-  - docker build -t vc/backend-test -f ./Dockerfile.test .
-  
-before_script:
-  - sleep 15
-  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 
 install:
-  - npm run test
+  - npm run build
 
 script:
-  - mongod docker run vc/backend-test npm run test -- --coverage
+  - npm test
