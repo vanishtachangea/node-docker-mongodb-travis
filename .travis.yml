@@ -2,10 +2,16 @@ services: docker
 
 before_install:
   - docker -v
-  - cp .env .env
   - sudo /etc/init.d/postgresql stop
   - sudo service mysql stop
-
+env:
+  - MONGO_INITDB_ROOT_USERNAME=example
+  - MONGO_INITDB_ROOT_PASSWORD=example
+  - MONGO_INITDB_DATABASE=api
+  - MONGO_DATA_DIR=/data/db
+  - MONGO_TEST_DATA_DIR=/data/test_db
+  - MONGO_LOG_FILE=/mongodb/mongodb.log
+  - PORT=80
 install:
   - npm run build
 
