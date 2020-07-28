@@ -6,26 +6,25 @@ services:
       dockerfile: docker/Dockerfile.test
       args:
         port: ${PORT}
-    env:
-      - MONGO_INITDB_ROOT_USERNAME=example
-      - MONGO_INITDB_ROOT_PASSWORD=example
-      - MONGO_INITDB_DATABASE=api
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_TEST_DATA_DIR=/data/test_db
-      - MONGO_LOG_FILE=/mongodb/mongodb.log
-      - PORT=80
     environment:
+      MONGO_INITDB_ROOT_USERNAME: example
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: api
+      MONGO_DATA_DIR: /data/db
+      MONGO_TEST_DATA_DIR: /data/test_db
+      MONGO_LOG_FILE: /mongodb/mongodb.log
+      PORT: 80
       WAIT_HOSTS: database-test:27017
   database-test:
     image: mongo:4.0
-    env:
-      - MONGO_INITDB_ROOT_USERNAME=example
-      - MONGO_INITDB_ROOT_PASSWORD=example
-      - MONGO_INITDB_DATABASE=api
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_TEST_DATA_DIR=/data/test_db
-      - MONGO_LOG_FILE=/mongodb/mongodb.log
-      - PORT=80
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: example
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: api
+      MONGO_DATA_DIR: /data/db
+      MONGO_TEST_DATA_DIR: /data/test_db
+      MONGO_LOG_FILE: /mongodb/mongodb.log
+      PORT: 80
     volumes:
       - ".${MONGO_TEST_DATA_DIR}:${MONGO_TEST_DATA_DIR}"
     expose:
