@@ -4,4 +4,5 @@ RUN chmod +x /wait
 ENV NODE_ENV dev
 RUN npm install && npm install -g mocha
 ARG port=80
+COPY . . 
 CMD /wait && mocha test/unitTests.js --exit
