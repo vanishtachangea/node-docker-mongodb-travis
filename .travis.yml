@@ -13,7 +13,7 @@ before_install:
   - docker -v
   - sudo /etc/init.d/postgresql stop
   - sudo service mysql stop
-  - docker build -t vc/backend-test -f ./docker/Dockerfile.dev ./backend-test
+  - docker build -t vc/backend-test -f ./docker/Dockerfile.dev .
 
 after_success:
   - docker build -t vc/backend-test ./backend-test
