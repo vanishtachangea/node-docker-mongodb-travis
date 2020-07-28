@@ -5,6 +5,6 @@ LICENSE
 README.md
 .gitignore
 .git/
-example.env
+test.env
+dev.env
 .travis.yml
-docker/
