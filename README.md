@@ -1,6 +1,6 @@
-# mongo-crud
+# node-docker-mongodb-travis
 
-[![Build Status](https://travis-ci.org/vanishtachangea/mongo-crud.svg?branch=master)](https://travis-ci.org/vanishtachangea/mongo-crud)
+[![Build Status](https://travis-ci.org/vanishtachangea/node-docker-mongodb-travis.svg?branch=master)](https://travis-ci.org/vanishtachangea/node-docker-mongodb-travis)
 
 FORKED APPLICATION TO TEST MONGO ON TRAVIS - A CRUD API built with MongoDB and Express.
 
