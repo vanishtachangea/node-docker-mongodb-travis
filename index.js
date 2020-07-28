@@ -6,7 +6,7 @@ const dbName = process.env.NODE_ENV === 'dev' ? 'database-test' : 'database'
 const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@${dbName}:27017?authMechanism=SCRAM-SHA-1&authSource=admin`
 const options = {
   useNewUrlParser: true, 
-  reconnectTries: 60, 
+  reconnectTries: 2, 
   reconnectInterval: 1000
 }
 const routes = require('./routes/routes.js')

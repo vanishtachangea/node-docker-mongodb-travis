@@ -13,7 +13,7 @@ env:
   - MONGO_LOG_FILE=/mongodb/mongodb.log
   - PORT=80
 install:
-  - npm run build
+  - npm run test
 
 script:
   - npm test
